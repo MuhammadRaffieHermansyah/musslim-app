@@ -15,7 +15,6 @@ class MenuCard extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [

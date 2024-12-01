@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musslim_app/constants/colors.dart';
+import 'package:musslim_app/pages/juzAmma/widgets/sheet_play.dart';
 import 'package:quran/quran.dart' as quran;
 
 class VerseSurahPage extends StatelessWidget {
@@ -15,6 +16,21 @@ class VerseSurahPage extends StatelessWidget {
           quran.getSurahName(nomorSurat),
           style: const TextStyle(color: Colors.white),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return SheetPlay(
+                    nomorSurat: nomorSurat,
+                  );
+                },
+              );
+            },
+            icon: const Icon(Icons.play_arrow),
+          ),
+        ],
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: ColorTheme.mainColor,
       ),
